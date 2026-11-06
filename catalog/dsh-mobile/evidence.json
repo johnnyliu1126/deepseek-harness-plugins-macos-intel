@@ -1,0 +1,28 @@
+{
+  "name": "dsh-mobile",
+  "version": "0.8.2",
+  "entries": [
+    {
+      "file": "lib/index.mjs",
+      "sha256": "506a1ed6cbaff89b9663922990ae76746d8cb68c546548b50baa6550683cd939",
+      "bytes": 1025131
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "aab668bd02517580ca5dbadc21c6a6b9ac25d178c23569a0f6ece88337bad717",
+      "bytes": 953075
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "2610a52049458bf4a8224de05a29d1ea7a25adfe4820b80c26eb9e0bc73f9434",
+      "bytes": 1465
+    },
+    {
+      "file": "README.md",
+      "sha256": "74d1c3f6c81604c067675eb68e23dd03c94735d36cd07513dc4e9af542151f2d",
+      "bytes": 62552
+    }
+  ],
+  "bundleDefaults": "# Community bundle for the stock DSH Web profile. Installation contributes a\n# Host gateway and a browser Client face; it does not patch DSH source files.\n#\n# Leave DSH's adaptive Host/Client directory-picker pair intact. A second Host\n# provider conflicts with its single service; disabling the default can leave\n# workspace actions without a picker. The dedicated Mobile page reuses an\n# upstream browse surface when present and otherwise registers its own web flow\n# through public workspace slots, without replacing the Desktop's system chooser.\n- insert:\n    - id: mobile-access\n      name: dsh-mobile\n      inject: [webServer, connection]\n      config:\n        setupFile: !!js dshHomePath('mobile-access/setup.json')\n        stateFile: !!js dshHomePath('mobile-access/devices.json')\n        controlFile: !!js dshHomePath('mobile-access/control.json')\n        customCssFile: !!js dshHomePath('mobile-access/mobile.css')\n        customScriptFile: !!js dshHomePath('mobile-access/mobile.js')\n        initiallyEnabled: false\n        listenHost: 127.0.0.1\n        listenPort: 3443\n        allowedCidrs: [127.0.0.0/8]\n        tls:\n          mode: disabled\n\n    # Keep long question titles and answer options in one card scrollport.\n    # The component switch restores the upstream layout immediately.\n    # DSH anchors this file entry beside the bundle patch, independent of pnpm's linker.\n    - id: dsh-ui-fixes\n      name: ./packages/question-fixes/lib/index.mjs\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

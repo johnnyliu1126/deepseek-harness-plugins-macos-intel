@@ -1,0 +1,28 @@
+{
+  "name": "dsh-restart",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "file": "index.js",
+      "sha256": "11b08151a55c9319ff2bdf3e9fd841c9dbecf0aac6cadad268f82cb1cf060d27",
+      "bytes": 8830
+    },
+    {
+      "file": "client.js",
+      "sha256": "ce83d3d7d0f6d5be4c76dd94bc73e2caf96b424a6c609e0870d8d9f7a72856a9",
+      "bytes": 8025
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "78ff78d2db8496d4a6d7e00519492f7bfd03a190a9c9b892dae42ce58d831422",
+      "bytes": 341
+    },
+    {
+      "file": "README.md",
+      "sha256": "0a7592d559f8796d532d24006afa12d82c0e3b7a1b0e606264a419b44e671831",
+      "bytes": 5109
+    }
+  ],
+  "bundleDefaults": "# dsh-restart —— bundle patch\n# 组合包被 profile 选中后，这一层把两个半区挂进插件树：\n#   - Host 半区（index.js）：注册 /dsh-restart/* 路由，负责真的把应用重启；\n#   - Client 半区（client.js）：侧边栏页脚的「重启」按钮。\n- insert:\n    - id: dsh-restart\n      name: dsh-restart\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

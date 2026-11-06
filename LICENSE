@@ -1,0 +1,28 @@
+Mixed-license collection / 多许可证合集
+
+Individual upstream packages retain their own licenses. See THIRD_PARTY_NOTICES.md and licenses/ for the observed texts and authorship chain. Third-party runtime source is not vendored.
+各上游插件保留原许可证；见署名清单与许可证目录。未复制第三方运行源码。
+
+Locally imported dsh-restart declares MIT in its original manifest but ships no copyright notice. Locally imported dsh-balance-monitor declares no license. Their provenance is recorded without inventing an author or granting additional rights.
+本地 restart 原清单声明 MIT 但缺少版权声明；balance 未声明许可证。只记录已有事实，不虚构作者或新增授权。
+
+New collection documentation, catalog, installer and verification scripts: MIT, Copyright (c) 2026 johnnyliu1126.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of these collection-specific files and associated documentation files (the
+"Software"), to deal in the Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, and to permit persons to whom
+the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This grant does not relicense upstream or imported local plugin files.

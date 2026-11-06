@@ -1,0 +1,11 @@
+# Observed compatibility guards / 已观察到的兼容性保护。
+# These rows require a newer settings API in the installed Web UI family.
+# Keep disabled until the target host has been verified separately.
+- id: ui-task-board
+  disabled: true
+- id: pet
+  disabled: true
+- id: describe-image
+  disabled: true
+- id: ui-skin-center
+  disabled: true

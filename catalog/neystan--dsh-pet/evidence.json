@@ -1,0 +1,28 @@
+{
+  "name": "@neystan/dsh-pet",
+  "version": "0.1.16",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "b647c45b67921504d64049ec2232b330303ef606e87af27558989163b625b988",
+      "bytes": 52429
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "fa29ebd782e2c7a95c1ba6cb4c9f875db0c126f5bc50fd2c0e3b07b8c0f377c4",
+      "bytes": 95220
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "07a50bfc3ff751f4c0eba8a951886722ee89faaf5ab8f2156a2e4c90d00e1f1c",
+      "bytes": 592
+    },
+    {
+      "file": "README.md",
+      "sha256": "2cb938e7e4ffb280678974c5f2489d0528f716e04a622bbb4f22f4851c7a8168",
+      "bytes": 9311
+    }
+  ],
+  "bundleDefaults": "# dsh-pet bundle patch: inserts its plugin row into the web plugin roster.\n# The bundle is the official dsh plugin shape — install it into a dsh profile\n# (`dsh plugin --profile <name> add link:<LOCAL_PATH> The single\n# row mounts BOTH halves: the host side (pet state machine, affinity score,\n# pet.* RPC service) and the browser side (the modules node half scans\n# dsh.client packages into the web plugin roster, served from this package's\n# lib/client.js plus the whale assets under assets/whale).\n- insert:\n    - id: pet\n      name: '@neystan/dsh-pet'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@tt-a1i/archify-dsh",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "acc912bb640b67a7bd0f8770fd717cfd42214adf6ecf3690648ca5bb915d1db6",
+      "bytes": 682
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "9d9f68e3caf27847ff0837dca0d1df95e2cecc5c98de901b13e7b2b2746e07ba",
+      "bytes": 640
+    },
+    {
+      "file": "README.md",
+      "sha256": "f8c792b691c18cfa9480a04e202ba320cfaa7cd0e3033ff8ddc518fa4dfb7a1d",
+      "bytes": 3527
+    }
+  ],
+  "bundleDefaults": "# Opt-in Archify filesystem Skill provider for DeepSeek Harness.\n# Resolves the packaged Skill root from the installed npm identity anchored at\n# the DSH profile (Loader baseUrl), never as a path concatenated onto baseUrl.\n- insert:\n    - id: archify-skill-filesystem\n      name: '@deepseek-ai/dsh-skill-filesystem'\n      config:\n        providerName: archify-plugin\n        includeDefaultRoots: false\n        bundledSkillDir: !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@tt-a1i/archify-dsh/package.json')), 'skills')\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

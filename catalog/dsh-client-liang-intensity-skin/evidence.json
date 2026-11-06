@@ -1,0 +1,23 @@
+{
+  "name": "dsh-client-liang-intensity-skin",
+  "version": "0.1.6",
+  "entries": [
+    {
+      "file": "lib/client.js",
+      "sha256": "2c4e0049d3f39d935182aacc4808eaa714affd14634c3ba4850779c353750b12",
+      "bytes": 48993
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "f270d1dbd7b1e49a5f395322b9c7de7a33672ebe0bc38213d5713c113f898096",
+      "bytes": 85
+    },
+    {
+      "file": "README.md",
+      "sha256": "60c03f8ac0d62cda56e0dd6c6a3ba7c90c6f3eb70018662a27610e41735f150b",
+      "bytes": 7572
+    }
+  ],
+  "bundleDefaults": null,
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

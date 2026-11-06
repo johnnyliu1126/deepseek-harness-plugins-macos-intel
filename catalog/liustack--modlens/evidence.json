@@ -1,0 +1,18 @@
+{
+  "name": "@liustack/modlens",
+  "version": "3.27.2",
+  "entries": [
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "b190ef90625c1417a7a798b2982a84c0219f0030f0fea11133c7602815c3f00b",
+      "bytes": 213
+    },
+    {
+      "file": "README.md",
+      "sha256": "aabf8a71d0bea096e4e6740aab9fa7a28da39479c1f3f31dceb38e1f814cf349",
+      "bytes": 18496
+    }
+  ],
+  "bundleDefaults": "# dsh bundle layer: mount the modlens vision plugin (dsh/index.js via the\n# package root export; bin stays the CLI, nothing imports the root otherwise).\n- insert:\n    - id: modlens\n      name: '@liustack/modlens'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

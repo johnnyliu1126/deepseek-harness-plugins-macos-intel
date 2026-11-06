@@ -1,0 +1,28 @@
+{
+  "name": "dsh-purge-community",
+  "version": "1.6.60",
+  "entries": [
+    {
+      "file": "client.js",
+      "sha256": "36d852e3d8b3e7f14668e886c00a8fbf3e5d5f0394492113f962f2f3d5b907fa",
+      "bytes": 636010
+    },
+    {
+      "file": "lib/index.js",
+      "sha256": "26090208302596c8b74a2fcd161d935176b96745d7bd78b8d65d1f3bcf86428a",
+      "bytes": 121264
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "12ee4c534628df6254871896b1aca46ee50d406cf45116492f4d402fed9df85c",
+      "bytes": 1952
+    },
+    {
+      "file": "README.md",
+      "sha256": "b2c0871aec7653cc35679b7f5828b592a10b1bed2b4f8d1fbbcb7a4a77cad3d3",
+      "bytes": 20726
+    }
+  ],
+  "bundleDefaults": "# dsh-purge bundle patch\n#\n# 清洗 + 演练台都在本插件内（lib/redteam、presets/redteam、skills/redteam）。\n# 只装 dsh-purge，不外接、不 link 其它红队包。\n\n# 关掉旧的独立红队包行（若用户以前装过 dsh-redteam-mode）\n- id: redteam-store\n  name: dsh-redteam-store\n  disabled: true\n\n- id: redteam-ui\n  name: dsh-redteam-ui\n  disabled: true\n\n- id: redteam-mode\n  name: dsh-redteam-mode\n  disabled: true\n\n- id: redteam-mode-store\n  name: dsh-redteam-mode/store\n  disabled: true\n\n- id: redteam-mode-ui\n  name: dsh-redteam-mode/ui\n  disabled: true\n\n- id: system-prompt\n  config:\n    includeHarnessIdentity: false\n    personaPrefix: \"\"\n    # The runtime checks cwd availability; the config layer must not require it.\n    personaSuffix: \"\"\n\n- insert:\n    - id: dsh-purge\n      name: 'dsh-purge-community'\n      inject: [systemPrompt, tools]\n      config:\n        enabled: true\n        excludePresets: []\n        autoApplyOnStart: false\n        autoUpdateOnStart: false\n        autoRevertOnMissing: false\n        injectOnce: false\n        stripMnemon: true\n        verbose: false\n        postPrompt: \"\"\n        postPromptOrder: 5100\n        autoRetry: true\n        retryMax: 3\n        autoContinue: false\n        continueMax: 3\n        continueText: \"继续\"\n        capabilityProtocol: true\n        hooksDenyBypass: true\n\n    # 演练台：预设 + 技能落地（本插件 lib/redteam）\n    - id: dsh-purge-redteam\n      name: dsh-purge-community/redteam\n\n    # 自带 agent 预设：unrestricted（无限制模式）\n    - id: dsh-purge-presets\n      name: dsh-purge-community/presets-plugin\n\n    # 演练台事实库（SQLite），数据在 $DSH_HOME/redteam\n    - id: dsh-purge-redteam-store\n      name: dsh-purge-community/redteam/store\n      config:\n        root: !!js dshHomePath('redteam')\n\n    # 演练台 HTTP 桥 POST /redteam/api\n    - id: dsh-purge-redteam-ui\n      name: dsh-purge-community/redteam/ui\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

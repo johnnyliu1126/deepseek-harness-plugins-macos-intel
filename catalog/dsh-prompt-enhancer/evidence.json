@@ -1,0 +1,28 @@
+{
+  "name": "dsh-prompt-enhancer",
+  "version": "1.2.2",
+  "entries": [
+    {
+      "file": "index.js",
+      "sha256": "723677fa1209d08624771435a10f13e05c19429e5b95ce7272faf2d300eade8b",
+      "bytes": 29117
+    },
+    {
+      "file": "client.js",
+      "sha256": "1d4981a706f20ec118d0b8058da537edc78cdd8793b429598452a988aeabbe10",
+      "bytes": 44863
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "d26f444d9c7942db9e922e504c980af8f6a98ef007e8a534d83509fd03124426",
+      "bytes": 114
+    },
+    {
+      "file": "README.md",
+      "sha256": "fdee6196b17afe64db815c409facb9d12dcffb792311b6fe28404dff05b70e05",
+      "bytes": 7970
+    }
+  ],
+  "bundleDefaults": "# dsh-prompt-enhancer —— bundle patch\n- insert:\n    - id: dsh-prompt-enhancer\n      name: dsh-prompt-enhancer\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

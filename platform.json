@@ -1,0 +1,11 @@
+{
+  "id": "macos-intel",
+  "label": "macOS Intel",
+  "system": "Darwin",
+  "architecture": "x64",
+  "runner": "macos-15-intel",
+  "nodeMajor": 24,
+  "sourceRepository": "https://github.com/johnnyliu1126/deepseek-harness-plugin-collection",
+  "sourceCommit": "c10c4436740e8d462215f361d3a8e18b3801d326",
+  "excludedPackages": []
+}

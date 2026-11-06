@@ -1,0 +1,7 @@
+# dsh-restart —— bundle patch
+# 组合包被 profile 选中后，这一层把两个半区挂进插件树：
+#   - Host 半区（index.js）：注册 /dsh-restart/* 路由，负责真的把应用重启；
+#   - Client 半区（client.js）：侧边栏页脚的「重启」按钮。
+- insert:
+    - id: dsh-restart
+      name: dsh-restart

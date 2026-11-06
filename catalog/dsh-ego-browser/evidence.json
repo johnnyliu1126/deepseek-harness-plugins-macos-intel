@@ -1,0 +1,28 @@
+{
+  "name": "dsh-ego-browser",
+  "version": "0.9.8",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "aac0a545aa049163c9510156582bf34e8fd06e197bb9eff15d60cb33a489afc7",
+      "bytes": 268821
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "a6e81a71e4bfca086f1a347de2404fad2f4c83d20cfedcab66a5bf49cdaf7cbd",
+      "bytes": 159472
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "2b7441fcfc52c96bbb52c2ee2d8e20f1ef250879f92b1ad6ff6e0c987059eb69",
+      "bytes": 940
+    },
+    {
+      "file": "README.md",
+      "sha256": "bb63a218804209453af3f40de8bc044fc15f62e654e333996686ba82907d3c59",
+      "bytes": 51023
+    }
+  ],
+  "bundleDefaults": "# Insert ego-browser: structured browser-automation tools (30+ ego_*) that drive\n# the vendored ego-lite runtime through ctx.subprocess, plus a realtime watch\n# panel (live SSE screencast + direct mouse interaction + download capture +\n# human-verification notice + tab bar + login guide).\n#\n# All Config fields are optional — defaults are computed in lib/index.js\n# (vendored runtime CLI, sane maxOutputBytes / graceMs, empty defaultSpace).\n#\n# [0.1.2 client contract] the loader row specifier MUST equal the package.json\n# `name` (`dsh-ego-browser`) — the client-modules scan matches the nearest\n# manifest name against the Loader specifier, and the boot row id is the\n# package name. The earlier `@dsh-external/ego-browser` alias (junction key)\n# made the scan classify the entry as \"not a client row\": host tools kept\n# working but the watch panel silently disappeared.\n- insert:\n    - id: ego-browser\n      name: \"dsh-ego-browser\"\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@neystan/dsh-client-ui-aionui-panel",
+  "version": "0.1.16",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "af6b43b14b89f1b98ee1145b237800489cf8abe46f1bc4d1dc5f0564bc30a5df",
+      "bytes": 50060
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "b4beaab670ab71a94470b35b9a905a9c94b82ce9513939f7119ce8cbcd8804ca",
+      "bytes": 204760
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "bb13c0279634facaca91ac4f5336321a0b3d2707fbda05d69c4cef0284244d36",
+      "bytes": 678
+    },
+    {
+      "file": "README.md",
+      "sha256": "cc189d4568ee348fd6e6b76b3c35fd59a0cdd826b1b010c9455166e9f6607324",
+      "bytes": 6251
+    }
+  ],
+  "bundleDefaults": null,
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

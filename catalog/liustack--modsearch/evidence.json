@@ -1,0 +1,18 @@
+{
+  "name": "@liustack/modsearch",
+  "version": "5.10.11",
+  "entries": [
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "a60f2eb3a1a73c15e1f70ed7fbb9ee33e71e4a9a2847a146d1fe335c56934bcb",
+      "bytes": 683
+    },
+    {
+      "file": "README.md",
+      "sha256": "e2c36977f87ee353371de436f7e9cfaab3e1644bed39b54e10b429a72512231b",
+      "bytes": 13517
+    }
+  ],
+  "bundleDefaults": "# dsh bundle layer: mount the modsearch web plugin (dsh/index.js via the\n# package root export; bin stays the CLI, nothing imports the root otherwise)\n# and route the web seam's search capability to it. A patch row replaces the\n# targeted row's whole config, so this row restates every base key: the base\n# layer pins `searchProvider: deepseek-official` and `fetchProvider: http`,\n# and dropping the fetch pin makes web_fetch ambiguous once the host also\n# registers deepseek-fetch-api (#43). A later profile patch can pin any\n# provider back.\n- id: web\n  config:\n    searchProvider: modsearch\n    fetchProvider: http\n\n- insert:\n    - id: modsearch\n      name: '@liustack/modsearch'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

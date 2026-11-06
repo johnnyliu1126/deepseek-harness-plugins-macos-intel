@@ -1,0 +1,36 @@
+name: Verify macos-intel
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: macos-15-intel
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          architecture: 'x64'
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          architecture: 'x64'
+      - run: python scripts/platform_support.py --check-node
+      - run: python scripts/check.py
+      - run: python -m unittest discover -s tests -v
+      - run: node --test plugins/dsh-balance-monitor/core.test.js tests/routes.test.mjs
+      - name: Native isolated local installation
+        run: python scripts/collection.py --target "${{ runner.temp }}/dsh-local-profile" --plugins dsh-restart dsh-balance-monitor --apply --fetch --manager npm
+      - name: Pack local source
+        run: |
+          npm pack ./plugins/dsh-restart --ignore-scripts --pack-destination "${{ runner.temp }}"
+          npm pack ./plugins/dsh-balance-monitor --ignore-scripts --pack-destination "${{ runner.temp }}"
+      - run: npm install --global pnpm@11.25.0
+      - name: Native full dependency installation (no lifecycle scripts)
+        run: python scripts/collection.py --target "${{ runner.temp }}/dsh-full-profile" --all --apply --fetch

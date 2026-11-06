@@ -1,0 +1,35 @@
+{
+  "name": "dsh-balance-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "core.js",
+    "core.test.js",
+    "README.md",
+    "README.zh-CN.md",
+    "PROVENANCE.md",
+    "evidence.json"
+  ],
+  "private": true
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@neystan/dsh-client-ui-task-board",
+  "version": "0.1.16",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "4e706bf9d62d1c618c5446ef2f3993e8b0e2ba99c967de6bddb55208c8eac598",
+      "bytes": 274297
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "e4e21cc72725f688f038d6c5e0147ba7845dbcc16f9f9c6640e6a24b2085b4dc",
+      "bytes": 140582
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "9ffcb2e8110f61015fb193eeb99fc6db2e9fbe4399967920ee6d3a6a553901e6",
+      "bytes": 662
+    },
+    {
+      "file": "README.md",
+      "sha256": "321e64bf8d140cd5eb0c3e29d3a262eb6eed9b0e95feba1ca8e6237d836e94e9",
+      "bytes": 5444
+    }
+  ],
+  "bundleDefaults": "# dsh-task-board bundle patch: inserts the dual-face plugin row into the web\n# profile roster. Applied as a profile bundle layer (the `dsh.bundle.patch`\n# manifest field) over dsh-base; activate with\n# `dsh plugin --profile <name> add link:~/code/dsh-web-ui/packages/dsh-task-board`.\n#\n# The row is a bare plugin by package name: the node half (exports \".\") runs\n# in the host process (the system-prompt announcement section), and the\n# `dsh.client` declaration in package.json makes the browser half\n# (exports \"./client\", served at /plugins/<id>/client.js) load in the web GUI.\n- insert:\n    - id: ui-task-board\n      name: '@neystan/dsh-client-ui-task-board'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

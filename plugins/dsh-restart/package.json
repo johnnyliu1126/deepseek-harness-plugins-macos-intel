@@ -1,0 +1,39 @@
+{
+  "name": "dsh-restart",
+  "version": "1.0.0",
+  "description": "一键重启 DeepSeek Harness：侧边栏按钮 + 宿主路由 + 命令行脚本。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "bin/restart.sh",
+    "README.md",
+    "README.zh-CN.md",
+    "PROVENANCE.md",
+    "evidence.json"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "restart"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "license": "MIT",
+  "private": true
+}

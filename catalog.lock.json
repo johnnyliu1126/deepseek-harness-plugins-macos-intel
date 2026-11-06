@@ -1,0 +1,1528 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-11-06",
+  "hostComponentVersion": "0.2.1-rc.4",
+  "hostBundles": [
+    "@deepseek-ai/dsh-base",
+    "@deepseek-ai/dsh-web-app"
+  ],
+  "packages": [
+    {
+      "name": "dsh-purge-community",
+      "slug": "dsh-purge-community",
+      "version": "1.6.60",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "kingcharleslzy-ai",
+      "contributors": [
+        "小杨 / YuJunZhiXue (original dsh-purge author)",
+        {
+          "name": "luowang-ui",
+          "url": "https://github.com/luowang-ui"
+        },
+        {
+          "name": "heigit",
+          "url": "https://github.com/heigit"
+        },
+        {
+          "name": "OGHong",
+          "url": "https://github.com/OGHong"
+        },
+        {
+          "name": "loLollipop",
+          "url": "https://github.com/loLollipop"
+        },
+        {
+          "name": "youki258",
+          "url": "https://github.com/youki258"
+        },
+        {
+          "name": "SimonQvQ",
+          "url": "https://github.com/SimonQvQ"
+        }
+      ],
+      "repository": "https://github.com/kingcharleslzy-ai/dsh-purge",
+      "declaredLicense": "MIT",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "状态自检与宿主证据：面板检查补丁和运行状态，失败读取不等于未安装。",
+          "en": "Status diagnostics: inspect patch and host evidence; a read failure is not an absent installation."
+        },
+        {
+          "zh": "提示词与规则：按预设管理文本、追加顺序、排除预设和一次性注入选项。",
+          "en": "Prompt and rule management: per-preset text, ordering, exclusions, and one-shot injection controls."
+        },
+        {
+          "zh": "补丁生命周期：本机备份、应用、回滚与版本管理；可能改写宿主，需单独操作。",
+          "en": "Patch lifecycle: local backups, apply/revert and version management; host modification requires an explicit separate action."
+        },
+        {
+          "zh": "演练台：附带预设、技能、SQLite 事实库和 /redteam/api 桥接。",
+          "en": "Lab workbench: packaged presets, skills, SQLite evidence store and /redteam/api bridge."
+        },
+        {
+          "zh": "重试与继续：配置自动重试、次数上限和继续文本；不保证任务一定成功。",
+          "en": "Retry/continue: configurable retry limits and continuation text; success is not guaranteed."
+        }
+      ],
+      "config": [
+        [
+          "autoApplyOnStart / autoUpdateOnStart",
+          "false",
+          "Explicit lifecycle controls / 显式生命周期控制"
+        ],
+        [
+          "autoRetry / retryMax",
+          "true / 3",
+          "Retry controls / 重试"
+        ],
+        [
+          "autoContinue / continueMax",
+          "false / 3",
+          "Continuation controls / 继续"
+        ],
+        [
+          "postPrompt",
+          "empty",
+          "Local prompt text / 本地提示词"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": {
+          "default": "./lib/index.js"
+        },
+        "./client": "./client.js",
+        "./redteam": "./lib/redteam/index.js",
+        "./redteam/store": "./lib/redteam/store.js",
+        "./redteam/ui": "./lib/redteam/ui.js",
+        "./redteam/tools": "./lib/redteam/tools.js",
+        "./package.json": "./package.json",
+        "./presets-plugin": "./lib/presets-plugin.js"
+      },
+      "distribution": {
+        "tarball": "https://github.com/kingcharleslzy-ai/dsh-purge/releases/download/v1.6.60/dsh-purge-community-1.6.60.tgz",
+        "integrity": "sha512-4Kly9aRE0hzbRkPBy/6dmZUYm0uc7JXtEP7oa2jiShahLuu/E/8z6lpCeLp1T0/Yf+2LEY6f65lk6DQreeexGg==",
+        "sha256": "f742c17f8f0bcd95501b7a4123c2283ebe2f135fe44ad1339fb928e0eeabc6c1"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "client.js",
+          "sha256": "36d852e3d8b3e7f14668e886c00a8fbf3e5d5f0394492113f962f2f3d5b907fa",
+          "bytes": 636010
+        },
+        {
+          "file": "lib/index.js",
+          "sha256": "26090208302596c8b74a2fcd161d935176b96745d7bd78b8d65d1f3bcf86428a",
+          "bytes": 121264
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "12ee4c534628df6254871896b1aca46ee50d406cf45116492f4d402fed9df85c",
+          "bytes": 1952
+        },
+        {
+          "file": "README.md",
+          "sha256": "b2c0871aec7653cc35679b7f5828b592a10b1bed2b4f8d1fbbcb7a4a77cad3d3",
+          "bytes": 20726
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-web-ui-all",
+      "slug": "neystan--dsh-web-ui-all",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "聚合安装：一次安装任务看板、Git 图、右侧面板、宠物、图像描述和皮肤包。",
+          "en": "Aggregate installation: task board, Git graph, side panel, pet, image description and skins."
+        },
+        {
+          "zh": "组合层：通过 bundle patch 注册子插件，单独安装子包可选取部分功能。",
+          "en": "Composition: a bundle patch mounts child plugins; install individual packages for a subset."
+        },
+        {
+          "zh": "兼容性：部分设置使用较新 keyed slot，本机已禁用四个不兼容子项。",
+          "en": "Compatibility: some settings require newer keyed slots; four child rows are disabled in the observed profile."
+        }
+      ],
+      "config": [],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./lib/index.js",
+        "./client": "./lib/client.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-web-ui-all/-/dsh-web-ui-all-0.1.16.tgz",
+        "integrity": "sha512-elaB0pJoFvPgOp4LXT6NRai1zFbptzqHKOl+b1yM5UpBMhr6142pe6Xp30bB9uQJeDdQt8GhT5GLx+teSVRccw==",
+        "shasum": "958abadfc229e7196092bb5b8061a509d2253e9b"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "8ce170ae9a258f01a7a6c2dbf11673632440e322bda9686def7a362304105aab",
+          "bytes": 177
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "dc2780f9c0b3c870ed1af5e64bc55cc6408ffe288f352f593408ee88afa80856",
+          "bytes": 2572
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "14b61118549eca628faf641624a4aec0188cf5e65424a35afa0a9f4f4612fb1b",
+          "bytes": 933
+        },
+        {
+          "file": "README.md",
+          "sha256": "e663e9fbcf4c9241747d8f1630de983353244bc1d4611afbffae9d2b6bdd5282",
+          "bytes": 2409
+        }
+      ]
+    },
+    {
+      "name": "dsh-lark-channel",
+      "slug": "dsh-lark-channel",
+      "version": "0.0.7",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "omdsh-dev (upstream repository owner; package author undeclared)",
+      "contributors": [],
+      "repository": "https://github.com/omdsh-dev/dsh-lark",
+      "declaredLicense": "BSD-3-Clause",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "聊天驱动 Agent：飞书/Lark 文本触发真实宿主任务，推理、工具和结果分开展示。",
+          "en": "Chat-driven agents: Feishu/Lark messages launch host tasks with separate reasoning/tool/result views."
+        },
+        {
+          "zh": "持久会话：按聊天、话题或发送者隔离，/new 新建，/sessions 续接。",
+          "en": "Durable sessions: chat/thread/sender scopes, /new reset and /sessions continuation."
+        },
+        {
+          "zh": "工作区和模型：/ws、/cd、/model 切换，/status 查看状态，/stop 停止。",
+          "en": "Workspace/model controls: /ws, /cd, /model, /status and /stop."
+        },
+        {
+          "zh": "交互卡片：回答模型问题、评审计划和批准工具；权限调整仍遵守批准者配置。",
+          "en": "Interactive cards: questions, plan reviews and tool approvals subject to configured approvers."
+        },
+        {
+          "zh": "多机器人：独立凭据与会话，botPeers 限制对话对象，botHops 限制循环。",
+          "en": "Multiple bots: separate credentials/sessions, botPeers allowlists and botHops loop bounds."
+        },
+        {
+          "zh": "文件传输：接收文件到工作区；群聊发送需要逐次批准，默认单文件 20 MiB。",
+          "en": "File transfer: workspace inbox and per-send group approval, with a default 20 MiB per-file limit."
+        }
+      ],
+      "config": [
+        [
+          "sessionScope",
+          "see upstream schema",
+          "chat / chat-thread / chat-sender"
+        ],
+        [
+          "botHops",
+          "6",
+          "Maximum bot-to-bot hops / 机器人连续对话上限"
+        ],
+        [
+          "attachImages",
+          "false",
+          "Enable only for vision models / 仅视觉模型启用"
+        ],
+        [
+          "receiveFiles / sendFiles",
+          "true",
+          "Group sends require approval / 群聊发送仍需批准"
+        ],
+        [
+          "maxReceiveFileBytes / maxSendFileBytes",
+          "20 MiB",
+          "Per-direction size limits / 双向单文件大小限制"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/index.js"
+        },
+        "./invariant": {
+          "types": "./lib/types/invariant.d.ts",
+          "default": "./lib/invariant.js"
+        },
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/dsh-lark-channel/-/dsh-lark-channel-0.0.7.tgz",
+        "integrity": "sha512-jLuzsoVxlyNMjk3wCrYrDMWNvLOpGlmcffGLWcebFS86Z9bPnMGuWhczII1cUxztHlK3MFAVtzd7lJARBuU16w==",
+        "shasum": "8ae56df5c1334b1b5acf8bd4cd95c1cde1e9589b"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "58cc54dcb783a168146b255c74f9748f0a47a36438d82f3caedc4dc7b88ec913",
+          "bytes": 320329
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "be45050e87f3a03f7fa64ee0ca2bcf028b69a4edfba38ee01ed494660d3a4cf9",
+          "bytes": 3366
+        },
+        {
+          "file": "README.md",
+          "sha256": "9dc1a361eb46267d3c8e0c4c5ef586b6339cab555811e7315a815ee4f6c73739",
+          "bytes": 9925
+        }
+      ]
+    },
+    {
+      "name": "@tt-a1i/archify-dsh",
+      "slug": "tt-a1i--archify-dsh",
+      "version": "1.0.0",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "tt-a1i (upstream repository owner; package author undeclared)",
+      "contributors": [],
+      "repository": "https://github.com/tt-a1i/archify",
+      "declaredLicense": "MIT",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "架构图技能：通过文件系统 skill provider 提供 Archify，按名称调用。",
+          "en": "Architecture skill: exposes Archify via a filesystem skill provider; invoke it by name."
+        },
+        {
+          "zh": "结构化产物：生成规范 JSON 与 HTML 图，用组件、主路径和信任边界解释仓库。",
+          "en": "Structured artifacts: specification JSON and HTML diagrams with components, a main path and trust boundaries."
+        },
+        {
+          "zh": "轻量适配：不添加模型工具或 Web UI；内置 Archify 3.0.1，与适配器版本分开。",
+          "en": "Lightweight adapter: no extra native tools or Web UI; bundles Archify 3.0.1 independently of adapter version."
+        }
+      ],
+      "config": [
+        [
+          "archify-plugin",
+          "packaged skills root",
+          "Filesystem provider; no custom settings / 文件系统技能提供器"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./lib/index.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@tt-a1i/archify-dsh/-/archify-dsh-1.0.0.tgz",
+        "integrity": "sha512-ae5L+SyZngy3EzYnWHHfccAYJCZh5e9MTkEBh7mrwTMfpwpFtkIhiOg2vI5xnluCS8CSb+Ne1hi1kOWRQQtGBQ==",
+        "shasum": "ed20b2970df62c6e0e9a9df58ecc68e063e5644e"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "acc912bb640b67a7bd0f8770fd717cfd42214adf6ecf3690648ca5bb915d1db6",
+          "bytes": 682
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "9d9f68e3caf27847ff0837dca0d1df95e2cecc5c98de901b13e7b2b2746e07ba",
+          "bytes": 640
+        },
+        {
+          "file": "README.md",
+          "sha256": "f8c792b691c18cfa9480a04e202ba320cfaa7cd0e3033ff8ddc518fa4dfb7a1d",
+          "bytes": 3527
+        }
+      ]
+    },
+    {
+      "name": "dsh-prompt-enhancer",
+      "slug": "dsh-prompt-enhancer",
+      "version": "1.2.2",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "MCJF28",
+      "contributors": [],
+      "repository": "https://github.com/MCJF28/dsh-prompt-enhancer",
+      "declaredLicense": "MIT",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "草稿优化：输入框按钮替换草稿，保留发送前编辑和撤销的机会。",
+          "en": "Draft optimization: a composer button rewrites the draft before sending, with edit/undo opportunities."
+        },
+        {
+          "zh": "四档指令：精简、均衡（默认）、详细和自定义；短闲聊有防过度扩写重试。",
+          "en": "Instruction modes: concise, balanced (default), detailed and custom, with a short-chat over-expansion retry."
+        },
+        {
+          "zh": "模型路由：免费通道、当前模型或固定模型；免费通道失败可能回退到付费对话模型。",
+          "en": "Model routing: shared free channel, current model or fixed model; fallback may consume paid conversation quota."
+        },
+        {
+          "zh": "连通性与记录：设置页测试通道并显示上次实际调用；本机 settings.json 保存设置。",
+          "en": "Diagnostics: settings test the channel and show the last actual route; settings are stored locally."
+        }
+      ],
+      "config": [
+        [
+          "mode",
+          "balanced",
+          "concise / balanced / detailed / custom"
+        ],
+        [
+          "DSH_FREE_CHANNEL_BASE_URL",
+          "upstream default",
+          "Endpoint override / 覆盖端点"
+        ],
+        [
+          "DSH_FREE_CHANNEL_API_KEY",
+          "unset",
+          "Local environment only / 仅本地环境变量"
+        ],
+        [
+          "DSH_FREE_CHANNEL_MODEL",
+          "upstream default",
+          "Model override / 覆盖模型"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./index.js",
+        "./client": "./client.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/dsh-prompt-enhancer/-/dsh-prompt-enhancer-1.2.2.tgz",
+        "integrity": "sha512-noRyEIVlHkHSbF7pbkmIRqUPSc7JhUISK+DN0jcRbiMM8M7gL66UO+W2CGXlMBF6p60fQhAaJY8xeJ2xdKYpkA==",
+        "shasum": "bc5468bcc0eb313312e814c94bc6fe7863b711ca"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "index.js",
+          "sha256": "723677fa1209d08624771435a10f13e05c19429e5b95ce7272faf2d300eade8b",
+          "bytes": 29117
+        },
+        {
+          "file": "client.js",
+          "sha256": "1d4981a706f20ec118d0b8058da537edc78cdd8793b429598452a988aeabbe10",
+          "bytes": 44863
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "d26f444d9c7942db9e922e504c980af8f6a98ef007e8a534d83509fd03124426",
+          "bytes": 114
+        },
+        {
+          "file": "README.md",
+          "sha256": "fdee6196b17afe64db815c409facb9d12dcffb792311b6fe28404dff05b70e05",
+          "bytes": 7970
+        }
+      ]
+    },
+    {
+      "name": "@liustack/modlens",
+      "slug": "liustack--modlens",
+      "version": "3.27.2",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "Leon Liu",
+      "contributors": [],
+      "repository": "https://github.com/liustack/modlens",
+      "declaredLicense": "MIT",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "图像理解：为文本模型补充 OCR、阅读顺序、区域、实体和关系描述。",
+          "en": "Image understanding: OCR, reading order, regions, entities and relationships for text-only models."
+        },
+        {
+          "zh": "多提供商：Gemini、OpenAI 兼容、Anthropic、Antigravity、Claude 和 Kimi CLI。",
+          "en": "Providers: Gemini, OpenAI-compatible, Anthropic, Antigravity, Claude and Kimi CLI backends."
+        },
+        {
+          "zh": "故障转移与轮换：授权、限流和额度错误可触发同提供商密钥轮换及链路回退。",
+          "en": "Failover/key rotation: authorization, rate-limit and quota failures can rotate keys or switch providers."
+        },
+        {
+          "zh": "复用现有 CLI：doctor 检测已装工具，按授权配置复用；可能消耗对应订阅额度。",
+          "en": "CLI reuse: doctor discovers installed tools; explicitly configured reuse may consume their subscription quota."
+        }
+      ],
+      "config": [],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./dsh/index.js",
+        "./dsh": "./dsh/index.js",
+        "./package.json": "./package.json",
+        "./client": "./dsh/client.js"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@liustack/modlens/-/modlens-3.27.2.tgz",
+        "integrity": "sha512-Xz8BkrLgBFyTlDiRcxv+sf4V0W0xsHFPaCcXV3GpJOWBgqCb2CrgJwrA8Tfd1JoLqS0LInrILEMky/AM+0j9gA==",
+        "shasum": "245dccc202aa8940a694c8c5f9075cb177e279e8"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "b190ef90625c1417a7a798b2982a84c0219f0030f0fea11133c7602815c3f00b",
+          "bytes": 213
+        },
+        {
+          "file": "README.md",
+          "sha256": "aabf8a71d0bea096e4e6740aab9fa7a28da39479c1f3f31dceb38e1f814cf349",
+          "bytes": 18496
+        }
+      ]
+    },
+    {
+      "name": "@liustack/modsearch",
+      "slug": "liustack--modsearch",
+      "version": "5.10.11",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "Leon Liu",
+      "contributors": [],
+      "repository": "https://github.com/liustack/modsearch",
+      "declaredLicense": "MIT",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "网页搜索与抓取：给没有原生联网能力的模型提供搜索与页面正文。",
+          "en": "Web search/fetch: search and page text for models without native web access."
+        },
+        {
+          "zh": "多引擎：Firecrawl、Keenable、You.com、Antigravity、Tavily、Exa 和本地抓取。",
+          "en": "Engines: Firecrawl, Keenable, You.com, Antigravity, Tavily, Exa and local fetch."
+        },
+        {
+          "zh": "X 搜索：配置并登录 Grok Build 后使用对应渠道。",
+          "en": "X search: available through a configured, authenticated Grok Build installation."
+        },
+        {
+          "zh": "回退与密钥轮换：渠道失败时切换；免费额度是上游声明，可能变化。",
+          "en": "Fallback/key rotation: switch failed channels; advertised free quotas are upstream claims and may change."
+        }
+      ],
+      "config": [],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./dsh/index.js",
+        "./dsh": "./dsh/index.js",
+        "./client": "./dsh/client.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@liustack/modsearch/-/modsearch-5.10.11.tgz",
+        "integrity": "sha512-mIe0R3S9ouLu4Vemz7rZtmQ9HXFlmjQePFmMjxVQFD9SwbNp6lAJtXouFjXJ6XD27xfJECgNQC3p+baMI3rs6A==",
+        "shasum": "f5c3fb348a07682adaf09654f5c2db840893de17"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "a60f2eb3a1a73c15e1f70ed7fbb9ee33e71e4a9a2847a146d1fe335c56934bcb",
+          "bytes": 683
+        },
+        {
+          "file": "README.md",
+          "sha256": "e2c36977f87ee353371de436f7e9cfaab3e1644bed39b54e10b429a72512231b",
+          "bytes": 13517
+        }
+      ]
+    },
+    {
+      "name": "dsh-ego-browser",
+      "slug": "dsh-ego-browser",
+      "version": "0.9.8",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "Fisfzy (upstream repository owner; package author undeclared)",
+      "contributors": [],
+      "repository": "https://github.com/Fisfzy/dsh-ego-browser",
+      "declaredLicense": "MIT",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "浏览器工具：ego_* 工具驱动内置 ego-lite，执行页面访问和交互。",
+          "en": "Browser tools: ego_* tools drive the bundled ego-lite runtime for navigation and interaction."
+        },
+        {
+          "zh": "实时面板：SSE 画面、直接鼠标操作、标签页、下载捕获及人工验证提示。",
+          "en": "Live panel: SSE screencast, direct mouse control, tabs, download capture and human-verification notices."
+        },
+        {
+          "zh": "登录导入：Chrome/Edge 扩展桥或非破坏性配置副本，登录资料不进入仓库。",
+          "en": "Login import: Chrome/Edge bridge or non-destructive profile copies; login data is excluded here."
+        },
+        {
+          "zh": "不同宿主：Web 右侧栏、可选 TUI 文本面板，headless 仅工具模式。",
+          "en": "Host variants: Web side panel, optional TUI text UI and tools-only headless use."
+        }
+      ],
+      "config": [
+        [
+          "chromePath",
+          "auto-detect",
+          "Set only to an existing local browser / 本地浏览器路径"
+        ],
+        [
+          "defaultSpace",
+          "empty",
+          "Runtime space / 运行时空间"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./lib/index.js",
+        "./client": "./lib/client.js",
+        "./dsh-plugin.json": "./dsh-plugin.json",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/dsh-ego-browser/-/dsh-ego-browser-0.9.8.tgz",
+        "integrity": "sha512-9QZTAsAZDXYXGD2cC5FuYizxbNnk3aFWhQcSMk/FJm446QVzB5c21BdyBVx319CQ1gjLSjneopa3bXESH1dFSQ==",
+        "shasum": "f2cf4518e71d5a61595f01b4cdf7c0834fa33ffc"
+      },
+      "licenseFiles": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "aac0a545aa049163c9510156582bf34e8fd06e197bb9eff15d60cb33a489afc7",
+          "bytes": 268821
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "a6e81a71e4bfca086f1a347de2404fad2f4c83d20cfedcab66a5bf49cdaf7cbd",
+          "bytes": 159472
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "2b7441fcfc52c96bbb52c2ee2d8e20f1ef250879f92b1ad6ff6e0c987059eb69",
+          "bytes": 940
+        },
+        {
+          "file": "README.md",
+          "sha256": "bb63a218804209453af3f40de8bc044fc15f62e654e333996686ba82907d3c59",
+          "bytes": 51023
+        }
+      ]
+    },
+    {
+      "name": "dsh-client-liang-intensity-skin",
+      "slug": "dsh-client-liang-intensity-skin",
+      "version": "0.1.6",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "kingOfSoySauce (upstream repository owner; package author undeclared)",
+      "contributors": [],
+      "repository": "https://github.com/kingOfSoySauce/dsh-liang-skin",
+      "declaredLicense": "UNDECLARED",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "推理滑块：读取模型实际 reasoning.efforts，均匀映射到 0–30。",
+          "en": "Reasoning slider: maps the model’s actual reasoning.efforts evenly to 0–30."
+        },
+        {
+          "zh": "提交规则：拖动仅预览，松开、键盘完成或失焦后吸附并提交原始 effort ID。",
+          "en": "Commit behavior: drag previews; release, keyboard completion or blur snaps and commits the original effort ID."
+        },
+        {
+          "zh": "可见性：不支持推理、单档位或 addressed subagent 时隐藏。",
+          "en": "Visibility: hidden for unsupported/single-effort models and addressed subagents."
+        },
+        {
+          "zh": "外观切换：皮肤模式显示人物、背景和配色；原生模式恢复宿主界面。",
+          "en": "Appearance: themed mode adds characters/background/colors; native mode restores the host UI."
+        }
+      ],
+      "config": [
+        [
+          "appearance",
+          "user-selected",
+          "Themed/native; effort values come from model / 皮肤与原生；档位由模型决定"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./src/index.js",
+        "./client": "./lib/client.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/dsh-client-liang-intensity-skin/-/dsh-client-liang-intensity-skin-0.1.6.tgz",
+        "integrity": "sha512-4sdGOlhZJDNOWwbIB95EoisINw9pL/nDNdhCNHhhrXCj4wddCZkatJfUgkcyq3axPO0SCcXwuwfrudCPWvwnMA==",
+        "shasum": "42b8063088e3d46d206aa7715a50919e26d0df1b"
+      },
+      "licenseFiles": [],
+      "evidence": [
+        {
+          "file": "lib/client.js",
+          "sha256": "2c4e0049d3f39d935182aacc4808eaa714affd14634c3ba4850779c353750b12",
+          "bytes": 48993
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "f270d1dbd7b1e49a5f395322b9c7de7a33672ebe0bc38213d5713c113f898096",
+          "bytes": 85
+        },
+        {
+          "file": "README.md",
+          "sha256": "60c03f8ac0d62cda56e0dd6c6a3ba7c90c6f3eb70018662a27610e41735f150b",
+          "bytes": 7572
+        }
+      ]
+    },
+    {
+      "name": "dsh-restart",
+      "slug": "dsh-restart",
+      "version": "1.0.0",
+      "kind": "local",
+      "topLevel": true,
+      "author": "Undeclared in original manifest / 原清单未声明",
+      "contributors": [],
+      "repository": null,
+      "declaredLicense": "MIT",
+      "sourceIncluded": true,
+      "features": [
+        {
+          "zh": "常驻入口：侧边栏页脚文字按钮，窄栏降级为图标。",
+          "en": "Persistent entry: sidebar footer button with an icon in collapsed mode."
+        },
+        {
+          "zh": "重启过程：POST 路由调用 detached shell，延迟退出整棵应用进程并重新打开。",
+          "en": "Restart flow: POST route launches a detached shell that terminates and relaunches the application."
+        },
+        {
+          "zh": "状态与日志：state 和 log 接口，dryRun 预演和 10 秒重复请求去抖。",
+          "en": "Diagnostics: state/log routes, dryRun preview and a 10-second duplicate-request debounce."
+        },
+        {
+          "zh": "重连：浏览器轮询宿主返回后刷新；实际重启会打断进行中的任务。",
+          "en": "Reconnect: browser polling reloads after host recovery; a real restart interrupts active tasks."
+        }
+      ],
+      "config": [
+        [
+          "DSH_RESTART_APP_PATH",
+          "/Applications/DeepSeek Harness.app",
+          "Application bundle / 应用路径"
+        ],
+        [
+          "DSH_RESTART_DELAY_MS",
+          "700",
+          "Delay before termination / 退出延迟"
+        ],
+        [
+          "DSH_RESTART_DRY_RUN",
+          "0",
+          "1 prints the plan / 1 仅预演"
+        ],
+        [
+          "debounce",
+          "10000 ms",
+          "Host duplicate suppression / 宿主去抖"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./index.js",
+        "./client": "./client.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {},
+      "files": {
+        "package.json": "705c1db739ba88e43dc682a8de05526ac3e2d07c7768e7b82043649b04409b66",
+        "index.js": "11b08151a55c9319ff2bdf3e9fd841c9dbecf0aac6cadad268f82cb1cf060d27",
+        "client.js": "ce83d3d7d0f6d5be4c76dd94bc73e2caf96b424a6c609e0870d8d9f7a72856a9",
+        "cordis.patch.yml": "78ff78d2db8496d4a6d7e00519492f7bfd03a190a9c9b892dae42ce58d831422",
+        "bin/restart.sh": "c39349c63139204bc8f60f7ad81e3e6486cdba711797cf3d306911552cdc0218"
+      },
+      "licenseFiles": [],
+      "evidence": [
+        {
+          "file": "index.js",
+          "sha256": "11b08151a55c9319ff2bdf3e9fd841c9dbecf0aac6cadad268f82cb1cf060d27",
+          "bytes": 8830
+        },
+        {
+          "file": "client.js",
+          "sha256": "ce83d3d7d0f6d5be4c76dd94bc73e2caf96b424a6c609e0870d8d9f7a72856a9",
+          "bytes": 8025
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "78ff78d2db8496d4a6d7e00519492f7bfd03a190a9c9b892dae42ce58d831422",
+          "bytes": 341
+        },
+        {
+          "file": "README.md",
+          "sha256": "0a7592d559f8796d532d24006afa12d82c0e3b7a1b0e606264a419b44e671831",
+          "bytes": 5109
+        }
+      ]
+    },
+    {
+      "name": "dsh-balance-monitor",
+      "slug": "dsh-balance-monitor",
+      "version": "1.0.0",
+      "kind": "local",
+      "topLevel": true,
+      "author": "Undeclared in original manifest / 原清单未声明",
+      "contributors": [],
+      "repository": null,
+      "declaredLicense": "UNDECLARED",
+      "sourceIncluded": true,
+      "features": [
+        {
+          "zh": "余额：通过宿主 deepseekAccount 查询，按币种展示充值、赠金和合计。",
+          "en": "Balances: query host deepseekAccount; show recharge, bonus and total per currency."
+        },
+        {
+          "zh": "刷新：默认 60 秒，可选 30/60/120/300 秒，手动刷新、请求合并和 3 秒节流。",
+          "en": "Refresh: 60-second default, 30/60/120/300 options, manual refresh, request merging and a 3-second throttle."
+        },
+        {
+          "zh": "提醒：低余额阈值默认 10，金额着色，设置保存在 localStorage。",
+          "en": "Alert: default threshold 10 highlights low balances; settings persist in localStorage."
+        },
+        {
+          "zh": "时段：北京时间工作日时段与切换倒计时，硬编码 2026 假日。不是官方实时价格源。",
+          "en": "Timing: Beijing-time workday windows/countdown with hardcoded 2026 holidays; not an official live pricing feed."
+        },
+        {
+          "zh": "错误状态：区分未登录、接口不可用和查询失败；失败不显示零余额。",
+          "en": "Failure states: signed out, unsupported and failed are distinct; failures do not display zero balances."
+        }
+      ],
+      "config": [
+        [
+          "刷新间隔 / interval",
+          "60 s",
+          "30, 60, 120, 300; localStorage dshbm-interval"
+        ],
+        [
+          "低余额阈值 / threshold",
+          "10",
+          "localStorage dshbm-threshold"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": "./index.js",
+        "./client": "./client.js",
+        "./package.json": "./package.json"
+      },
+      "distribution": {},
+      "files": {
+        "package.json": "4767fc105c47d9ccb3beede77c0d17ad9e63becf0e51937c7a13d8191e17730e",
+        "index.js": "6a06007d8f4078b69b9c172f5e7f35eea7bde16f4be7a4992170af2560ad7ace",
+        "client.js": "4051b237acf0cec753396165889d27e6ba9e0b6179a48f7d0bc11f3a29c8934f",
+        "cordis.patch.yml": "b1835479098da19ab4f0c6989802c1b37a22a4cbaf0914bd262a8816b93a9e94",
+        "core.js": "05d3cd97e11fbcdcde1210aa5ade834c7d28011b61d7241178a05842c840a1b2",
+        "core.test.js": "f677164c7536d8c2dda97a7d84f28e4e058eeeb815e0e28d99b7b569a9763d9e"
+      },
+      "licenseFiles": [],
+      "evidence": [
+        {
+          "file": "index.js",
+          "sha256": "6a06007d8f4078b69b9c172f5e7f35eea7bde16f4be7a4992170af2560ad7ace",
+          "bytes": 1231
+        },
+        {
+          "file": "client.js",
+          "sha256": "4051b237acf0cec753396165889d27e6ba9e0b6179a48f7d0bc11f3a29c8934f",
+          "bytes": 3711
+        },
+        {
+          "file": "core.js",
+          "sha256": "05d3cd97e11fbcdcde1210aa5ade834c7d28011b61d7241178a05842c840a1b2",
+          "bytes": 1117
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "b1835479098da19ab4f0c6989802c1b37a22a4cbaf0914bd262a8816b93a9e94",
+          "bytes": 72
+        },
+        {
+          "file": "README.md",
+          "sha256": "5aee7b13e28e6560e65bba514c4c5eb9d1f0dd7d1febd2fae133934a0b6211d1",
+          "bytes": 1657
+        }
+      ]
+    },
+    {
+      "name": "dsh-mobile",
+      "slug": "dsh-mobile",
+      "version": "0.8.2",
+      "kind": "third-party",
+      "topLevel": true,
+      "author": "saya-ch (upstream repository owner; package author undeclared)",
+      "contributors": [],
+      "repository": "https://github.com/saya-ch/dsh-mobile",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "手机会话：与桌面共享 Workspace、消息和工具，适配触屏输入框、抽屉和问答卡片。",
+          "en": "Mobile sessions: shared workspaces/messages/tools with touch-oriented composer, drawer and question cards."
+        },
+        {
+          "zh": "客户端：Android App 与手机浏览器/PWA；界面与设备列表可定制。",
+          "en": "Clients: Android application and mobile browser/PWA, with customizable UI and device lists."
+        },
+        {
+          "zh": "配对：二维码、链接或密钥，多设备可达性检查、切换、重新配对和移除记录。",
+          "en": "Pairing: QR/link/key setup, multi-device reachability, switching, re-pairing and local-record removal."
+        },
+        {
+          "zh": "网络：LAN、Tailscale、cpolar、Cloudflare、FRP、自建代理、Caddy；iroh 是平台受限实验项。",
+          "en": "Networking: LAN, Tailscale, cpolar, Cloudflare, FRP, own proxy and Caddy; iroh is experimental and platform-limited."
+        },
+        {
+          "zh": "通知：iOS 主屏幕 Web Push 和 Android 原生通知，需用户显式开启。",
+          "en": "Notifications: iOS Home Screen Web Push and Android native alerts require explicit opt-in."
+        },
+        {
+          "zh": "诊断与安全：脱敏连接报告、设备凭据、Origin 绑定和第三方 WebSocket 逐路径批准。",
+          "en": "Diagnostics/security: redacted connection reports, device credentials, Origin binding and per-path third-party WebSocket approvals."
+        }
+      ],
+      "config": [
+        [
+          "pairing / network",
+          "configure in plugin UI",
+          "Local credentials are never exported / 配对凭据不导出"
+        ],
+        [
+          "notifications",
+          "explicit opt-in",
+          "Platform requirements apply / 受平台限制"
+        ]
+      ],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/index.d.mts",
+          "default": "./lib/index.mjs"
+        },
+        "./client": {
+          "default": "./lib/client.js"
+        },
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/dsh-mobile/-/dsh-mobile-0.8.2.tgz",
+        "integrity": "sha512-/D1pECpiRu1Ligg68Qb6zTw4lFxj0+6tkSoH6rNdSjW8sCPfbpnf5Zj4lpJyB71AndqFpEFzzLvqQ0lcy/DP/A==",
+        "shasum": "0ecdd7546fe56701d19fbd4fa58cb22eace8ac25"
+      },
+      "licenseFiles": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.mjs",
+          "sha256": "506a1ed6cbaff89b9663922990ae76746d8cb68c546548b50baa6550683cd939",
+          "bytes": 1025131
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "aab668bd02517580ca5dbadc21c6a6b9ac25d178c23569a0f6ece88337bad717",
+          "bytes": 953075
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "2610a52049458bf4a8224de05a29d1ea7a25adfe4820b80c26eb9e0bc73f9434",
+          "bytes": 1465
+        },
+        {
+          "file": "README.md",
+          "sha256": "74d1c3f6c81604c067675eb68e23dd03c94735d36cd07513dc4e9af542151f2d",
+          "bytes": 62552
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-client-ui-task-board",
+      "slug": "neystan--dsh-client-ui-task-board",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "任务看板：多列卡片、宿主持久化和真实 Agent 会话执行。",
+          "en": "Task board: multi-column cards, host persistence and execution through real agent sessions."
+        },
+        {
+          "zh": "定时任务：宿主 cron，创建、列表、暂停、恢复、运行和删除。",
+          "en": "Scheduling: host cron with create/list/pause/resume/run/delete actions."
+        },
+        {
+          "zh": "待办：添加、查询、完成和删除，数据持久保存。",
+          "en": "Todos: add/list/complete/delete with durable storage."
+        }
+      ],
+      "config": [],
+      "status": "disabled-by-observed-profile",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/index.js"
+        },
+        "./client": {
+          "types": "./lib/types/client/index.d.ts",
+          "default": "./lib/client.js"
+        },
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-client-ui-task-board/-/dsh-client-ui-task-board-0.1.16.tgz",
+        "integrity": "sha512-vFWQUIVUmhLnG9Dfz/YdWOd0AqsYJZMrzA+GhVI3HDr8H9OMF7k7yipz2WT3toNbbpxnhYyMpBk6+nqd77OfXQ==",
+        "shasum": "c38f17e1dab4cf2e29fcb04b6817d7083ac2854e"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "4e706bf9d62d1c618c5446ef2f3993e8b0e2ba99c967de6bddb55208c8eac598",
+          "bytes": 274297
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "e4e21cc72725f688f038d6c5e0147ba7845dbcc16f9f9c6640e6a24b2085b4dc",
+          "bytes": 140582
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "9ffcb2e8110f61015fb193eeb99fc6db2e9fbe4399967920ee6d3a6a553901e6",
+          "bytes": 662
+        },
+        {
+          "file": "README.md",
+          "sha256": "321e64bf8d140cd5eb0c3e29d3a262eb6eed9b0e95feba1ca8e6237d836e94e9",
+          "bytes": 5444
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-client-ui-aionui-panel",
+      "slug": "neystan--dsh-client-ui-aionui-panel",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "文件管理：Workspace 文件树、文件名搜索与 Git 改动。",
+          "en": "Explorer: workspace file tree, filename search and Git changes."
+        },
+        {
+          "zh": "预览：多标签查看十余种文件格式，通过宿主 fs/git 服务获取数据。",
+          "en": "Preview: multi-tab viewing for over ten formats using host fs/git services."
+        }
+      ],
+      "config": [],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/index.js"
+        },
+        "./client": {
+          "types": "./lib/types/client/index.d.ts",
+          "default": "./lib/client.js"
+        },
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-client-ui-aionui-panel/-/dsh-client-ui-aionui-panel-0.1.16.tgz",
+        "integrity": "sha512-2ZfHY8prmace1IWgHnmzvQ4Ky74+m1JfCep3qCb9R9iFnBGMmmBf/87rdiCTSz/oTTCEa5XyPiMMUtaRln4qXg==",
+        "shasum": "669eaeeb82fb508030695b5c1f1c6d24bc83c14e"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "licenseCaveat": "package.json declares Apache-2.0 but installed LICENSE is BSD-3-Clause; no code redistributed / 元数据与许可证文本不一致，未转载代码",
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "af6b43b14b89f1b98ee1145b237800489cf8abe46f1bc4d1dc5f0564bc30a5df",
+          "bytes": 50060
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "b4beaab670ab71a94470b35b9a905a9c94b82ce9513939f7119ce8cbcd8804ca",
+          "bytes": 204760
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "bb13c0279634facaca91ac4f5336321a0b3d2707fbda05d69c4cef0284244d36",
+          "bytes": 678
+        },
+        {
+          "file": "README.md",
+          "sha256": "cc189d4568ee348fd6e6b76b3c35fd59a0cdd826b1b010c9455166e9f6607324",
+          "bytes": 6251
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-client-ui-git-graph",
+      "slug": "neystan--dsh-client-ui-git-graph",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "分支与图：会话顶部的分支选择器和提交关系图。",
+          "en": "Branches/graph: a branch selector and commit graph in the session header."
+        },
+        {
+          "zh": "真实 Git 操作：通过宿主创建或切换分支，并执行操作前检查。",
+          "en": "Git operations: host-side branch creation/switching with guards."
+        }
+      ],
+      "config": [],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/index.js"
+        },
+        "./invariant": {
+          "types": "./lib/types/invariant.d.ts",
+          "default": "./lib/invariant.js"
+        },
+        "./client": {
+          "types": "./lib/types/client/index.d.ts",
+          "default": "./lib/client.js"
+        },
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-client-ui-git-graph/-/dsh-client-ui-git-graph-0.1.16.tgz",
+        "integrity": "sha512-Ni2iVwoSNcDpJkU3fyujVfExbdf7EY21SiBCF51KKegu/uBYqqCeJOEgfUWXYkfF63rOI3/5W3HAKX9COmvRQg==",
+        "shasum": "9fe47e2e569cd888929f1e03210041a62b695e46"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "eeeec73e68c83d20d6417debc4e20bf2e2648c2f63c3878e16566494c8415b5d",
+          "bytes": 37384
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "30ee3f2660444fc34f8205030eea5818a59519e3872a58a77892f47c3c6f87b8",
+          "bytes": 59255
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "b65a454acbc9a81e689c6adadc2488d30ee1d0c7b91ece50e21084d29c7c72ea",
+          "bytes": 630
+        },
+        {
+          "file": "README.md",
+          "sha256": "8d30fa6ea07c1f002bd93c4af18b4a89801c3b8be9dc9576520c9470a3754047",
+          "bytes": 7599
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-pet",
+      "slug": "neystan--dsh-pet",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "活动动画：会话与工具事件驱动九种动画状态。",
+          "en": "Activity animation: nine states driven by session/tool events."
+        },
+        {
+          "zh": "互动：抚摸、喂食、亲密度和鱼干库存，宿主统一保存。",
+          "en": "Interaction: petting, feeding, affinity and treat stock persisted by the host."
+        },
+        {
+          "zh": "自定义：分别导入 pet.json 与 spritesheet.webp，验证、预览、切换一个自定义槽。",
+          "en": "Customization: validate/preview/import pet.json and spritesheet.webp into one custom slot."
+        }
+      ],
+      "config": [],
+      "status": "disabled-by-observed-profile",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/index.js"
+        },
+        "./invariant": {
+          "types": "./lib/types/invariant.d.ts",
+          "default": "./lib/invariant.js"
+        },
+        "./client": {
+          "types": "./lib/types/client/index.d.ts",
+          "default": "./lib/client.js"
+        },
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-pet/-/dsh-pet-0.1.16.tgz",
+        "integrity": "sha512-ZQmTRyanPThoqNjJD3kev91Tnbvn5HiKwsbkljfciWZNfJ/HFxHmP6ZsnrXrhrs3ai03gjagUaJQxY7oa4wzyg==",
+        "shasum": "4d81ecd4b014746263f90ce282c9197a142043a9"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "b647c45b67921504d64049ec2232b330303ef606e87af27558989163b625b988",
+          "bytes": 52429
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "fa29ebd782e2c7a95c1ba6cb4c9f875db0c126f5bc50fd2c0e3b07b8c0f377c4",
+          "bytes": 95220
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "07a50bfc3ff751f4c0eba8a951886722ee89faaf5ab8f2156a2e4c90d00e1f1c",
+          "bytes": 592
+        },
+        {
+          "file": "README.md",
+          "sha256": "2cb938e7e4ffb280678974c5f2489d0528f716e04a622bbb4f22f4851c7a8168",
+          "bytes": 9311
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-skins",
+      "slug": "neystan--dsh-skins",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "聚合皮肤：内置十种皮肤资产与一个独立自定义主题槽。",
+          "en": "Skin collection: ten bundled skins and an independent custom-theme slot."
+        },
+        {
+          "zh": "互斥切换：dsh-skin use 管理激活，避免多个皮肤叠加。",
+          "en": "Exclusive activation: dsh-skin use manages one active skin at a time."
+        },
+        {
+          "zh": "外观控制：强调色、背景、前景、对比度与可复用 WebP 背景。",
+          "en": "Appearance controls: accent/background/foreground/contrast and reusable WebP backgrounds."
+        }
+      ],
+      "config": [],
+      "status": "declared-not-runtime-tested",
+      "entrypoints": {},
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-skins/-/dsh-skins-0.1.16.tgz",
+        "integrity": "sha512-505WKh4TM0zeLFz1wj6W0jr0gkQ8xvFyt5iA/wrUUNiqVnqxR7cLz1SW+08Ql9qYPttLDnUtu8fdrypbJE8gQg==",
+        "shasum": "4afb0b7be23b2c770023ba4d777d2e68824c7e16"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "c8ef86dc6549adb1ad195a1f1e134508a85e6c72b91b33f4c1f65d49555e89aa",
+          "bytes": 304
+        },
+        {
+          "file": "README.md",
+          "sha256": "71e14241043eeccbf9535c5faf4c2f812ec9782b635fc37547e7d2846200e064",
+          "bytes": 1750
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-tool-describe-image",
+      "slug": "neystan--dsh-tool-describe-image",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "图像输入：本地绝对路径、HTTP(S) URL 或附件引用，一次一张。",
+          "en": "Inputs: one local absolute path, HTTP(S) URL or attachment reference per call."
+        },
+        {
+          "zh": "模型工具：describe_image 接受指定 OCR、图表、翻译等 prompt，只把返回文字写入会话。",
+          "en": "Tool: describe_image accepts OCR/chart/translation instructions and adds only returned text to the conversation."
+        },
+        {
+          "zh": "协议：OpenAI 兼容 Chat Completions 或 Responses，设置修改即时生效。",
+          "en": "Protocols: OpenAI-compatible Chat Completions or Responses with live configuration."
+        },
+        {
+          "zh": "边界：默认 10 MiB、1024 输出 tokens、60 秒；拒绝重定向并检查文件魔数。",
+          "en": "Bounds: defaults of 10 MiB, 1024 output tokens and 60 seconds; redirects refused and magic bytes checked."
+        }
+      ],
+      "config": [
+        [
+          "baseURL / model",
+          "required",
+          "Endpoint and vision model / 端点与视觉模型"
+        ],
+        [
+          "apiStyle",
+          "chat-completions",
+          "or responses"
+        ],
+        [
+          "apiKeyEnv",
+          "VISION_API_KEY",
+          "Credential reference / 凭据引用"
+        ],
+        [
+          "maxBytes",
+          "10485760",
+          "Image size cap / 图像上限"
+        ],
+        [
+          "maxOutputTokens",
+          "1024",
+          "Output cap / 输出上限"
+        ],
+        [
+          "timeoutMs",
+          "60000",
+          "Request timeout / 请求超时"
+        ]
+      ],
+      "status": "disabled-by-observed-profile",
+      "entrypoints": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/index.js"
+        },
+        "./invariant": {
+          "types": "./lib/types/invariant.d.ts",
+          "default": "./lib/invariant.js"
+        },
+        "./client": {
+          "types": "./lib/types/client/index.d.ts",
+          "default": "./lib/client.js"
+        },
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-tool-describe-image/-/dsh-tool-describe-image-0.1.16.tgz",
+        "integrity": "sha512-nYTEnnz0+NgLz0EJwJfSu3m88EJ3NH0RxCbGi11IJrLhCN1T6gY9D/SNJFKDtaF8lZAknNhopWXRUqRqSKGRuQ==",
+        "shasum": "3753264dbe3eacd6d3e31a2e9a34610ec1abb280"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "9b24aff68fc8a839c596037b0439e33531d88d6403a8f5a405c1f8149b0b9e11",
+          "bytes": 34414
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "74e9af478f121bb09e58df66705e03170e1841420cd85702f81348c45104b9e0",
+          "bytes": 44425
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "7ad9c55b493290c85209b6214e75853a8999f5baf5a2c857bb74bd81a444c849",
+          "bytes": 874
+        },
+        {
+          "file": "README.md",
+          "sha256": "fe2bc8a9628899a7a6277f5176eae70e72a869fbea9e47cb04aafc20169937e1",
+          "bytes": 7764
+        }
+      ]
+    },
+    {
+      "name": "@neystan/dsh-client-ui-skin-center",
+      "slug": "neystan--dsh-client-ui-skin-center",
+      "version": "0.1.16",
+      "kind": "third-party",
+      "topLevel": false,
+      "author": "neystan",
+      "contributors": [
+        {
+          "name": "zhu1090093659 (Original author)",
+          "url": "https://github.com/zhu1090093659"
+        }
+      ],
+      "repository": "https://github.com/neystan/dsh-web-ui",
+      "declaredLicense": "Apache-2.0",
+      "sourceIncluded": false,
+      "features": [
+        {
+          "zh": "浏览与试穿：默认主题、内置皮肤、自定义主题，即时试穿和退出恢复。",
+          "en": "Browse/try-on: stock, bundled and custom themes with live preview and restoration on exit."
+        },
+        {
+          "zh": "应用：宿主写入 managed patch，配置 watcher 热加载并刷新页面。",
+          "en": "Apply: host updates the managed patch; config watching reloads it and refreshes the page."
+        },
+        {
+          "zh": "自定义与背景：三色加对比度，Follow skin/Custom/None 背景模式；图片压缩为 WebP。",
+          "en": "Customization/backgrounds: three colors plus contrast; Follow skin/Custom/None modes and WebP normalization."
+        }
+      ],
+      "config": [],
+      "status": "disabled-by-observed-profile",
+      "entrypoints": {
+        ".": "./lib/index.js",
+        "./client": "./lib/client.js",
+        "./src/*": "./src/*",
+        "./package.json": "./package.json"
+      },
+      "distribution": {
+        "tarball": "https://registry.npmjs.org/@neystan/dsh-client-ui-skin-center/-/dsh-client-ui-skin-center-0.1.16.tgz",
+        "integrity": "sha512-Ssd2ymUmpWQYmLv7MLZ5A97kky639KZeCrIYMmxl0xv0BHK741GBwVRbKaWaemZrEGT0bp26GG9zar+ojI2zIg==",
+        "shasum": "981c7b09c27f5a058b8773d29c7b5afa69f3fdc7"
+      },
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "evidence": [
+        {
+          "file": "lib/index.js",
+          "sha256": "92449660a0ad3baf310d1f20df1f32526d9a2182b669822c1c23378f022c343e",
+          "bytes": 53147
+        },
+        {
+          "file": "lib/client.js",
+          "sha256": "3bb5092db3941b8c9ee34d5a844ef4405cccbafb693c476815af7e3a7c4f2b02",
+          "bytes": 108562
+        },
+        {
+          "file": "cordis.patch.yml",
+          "sha256": "b1f715625a4b48494182bbbd847e9669845225be8b20114e6d0eb40b6ce2ceaa",
+          "bytes": 287
+        },
+        {
+          "file": "README.md",
+          "sha256": "70b533bc023e84ff73f759142df818194473e4e65e199cf32ffcea8ceebd18a9",
+          "bytes": 13763
+        }
+      ]
+    }
+  ]
+}

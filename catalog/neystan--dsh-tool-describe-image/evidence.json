@@ -1,0 +1,28 @@
+{
+  "name": "@neystan/dsh-tool-describe-image",
+  "version": "0.1.16",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "9b24aff68fc8a839c596037b0439e33531d88d6403a8f5a405c1f8149b0b9e11",
+      "bytes": 34414
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "74e9af478f121bb09e58df66705e03170e1841420cd85702f81348c45104b9e0",
+      "bytes": 44425
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "7ad9c55b493290c85209b6214e75853a8999f5baf5a2c857bb74bd81a444c849",
+      "bytes": 874
+    },
+    {
+      "file": "README.md",
+      "sha256": "fe2bc8a9628899a7a6277f5176eae70e72a869fbea9e47cb04aafc20169937e1",
+      "bytes": 7764
+    }
+  ],
+  "bundleDefaults": "# dsh-tool-describe-image bundle patch: inserts the describe_image tool plugin\n# row into the web profile roster. Applied as a profile bundle layer (the\n# `dsh.bundle.patch` manifest field); install with\n# `dsh plugin --profile web add link:<repo>/packages/dsh-tool-describe-image`.\n#\n# One package, both halves: the node half (exports \".\") runs in the host\n# process and registers the model-facing describe_image tool, the\n# /describe-image/attach upload route, and the \"Image understanding\"\n# settings section; the browser half (declared by `dsh.client`, served from\n# lib/client.js) rewrites image-bearing sends into describe-image references\n# at submit time. The settings card itself is rendered by the web GUI's\n# built-in plugin config page from the `describe-image` settings section.\n- insert:\n    - id: describe-image\n      name: '@neystan/dsh-tool-describe-image'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

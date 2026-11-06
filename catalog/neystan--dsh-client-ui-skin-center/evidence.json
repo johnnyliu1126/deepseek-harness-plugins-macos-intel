@@ -1,0 +1,28 @@
+{
+  "name": "@neystan/dsh-client-ui-skin-center",
+  "version": "0.1.16",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "92449660a0ad3baf310d1f20df1f32526d9a2182b669822c1c23378f022c343e",
+      "bytes": 53147
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "3bb5092db3941b8c9ee34d5a844ef4405cccbafb693c476815af7e3a7c4f2b02",
+      "bytes": 108562
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "b1f715625a4b48494182bbbd847e9669845225be8b20114e6d0eb40b6ce2ceaa",
+      "bytes": 287
+    },
+    {
+      "file": "README.md",
+      "sha256": "70b533bc023e84ff73f759142df818194473e4e65e199cf32ffcea8ceebd18a9",
+      "bytes": 13763
+    }
+  ],
+  "bundleDefaults": "# skin-center bundle patch: inserts its dshClient row into the web plugin roster.\n# The bundle is the official dsh plugin shape — install it with\n# `dsh plugin --profile <name> add <path-or-git-url>`.\n- insert:\n    - id: ui-skin-center\n      name: '@neystan/dsh-client-ui-skin-center'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}

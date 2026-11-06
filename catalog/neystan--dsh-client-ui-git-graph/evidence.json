@@ -1,0 +1,28 @@
+{
+  "name": "@neystan/dsh-client-ui-git-graph",
+  "version": "0.1.16",
+  "entries": [
+    {
+      "file": "lib/index.js",
+      "sha256": "eeeec73e68c83d20d6417debc4e20bf2e2648c2f63c3878e16566494c8415b5d",
+      "bytes": 37384
+    },
+    {
+      "file": "lib/client.js",
+      "sha256": "30ee3f2660444fc34f8205030eea5818a59519e3872a58a77892f47c3c6f87b8",
+      "bytes": 59255
+    },
+    {
+      "file": "cordis.patch.yml",
+      "sha256": "b65a454acbc9a81e689c6adadc2488d30ee1d0c7b91ece50e21084d29c7c72ea",
+      "bytes": 630
+    },
+    {
+      "file": "README.md",
+      "sha256": "8d30fa6ea07c1f002bd93c4af18b4a89801c3b8be9dc9576520c9470a3754047",
+      "bytes": 7599
+    }
+  ],
+  "bundleDefaults": "# dsh-git-graph bundle patch: inserts the dual-face plugin row into the web\n# profile roster. Applied as a profile bundle layer (the `dsh.bundle.patch`\n# manifest field) over dsh-base; activate with\n# `dsh plugin --profile <name> add link:~/code/dsh-git-graph`.\n#\n# The row is a bare plugin by package name: the node half (exports \".\") runs\n# in the host process (git service + /git/* HTTP routes), and the dsh.client\n# declaration in package.json makes the browser half (exports \"./client\",\n# served at /plugins/<id>/client.js) load in the web GUI.\n- insert:\n    - id: ui-git-graph\n      name: '@neystan/dsh-client-ui-git-graph'\n",
+  "notice": "Upstream defaults are evidence, not a generated personal configuration. Retain linked upstream licenses. / 上游默认值仅作证据，不是个人配置。"
+}
