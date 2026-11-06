@@ -1,3 +1,5 @@
+> **已迁移 / Superseded:** 本平台版本已合并到 [统一仓库](https://github.com/johnnyliu1126/deepseek-harness-plugin-collection)，请从同一个 [Release 页面](https://github.com/johnnyliu1126/deepseek-harness-plugin-collection/releases/tag/v0.2.0) 下载对应平台包。本仓库仅保留迁移前记录。 / Platform downloads now live in the single canonical repository; this repository is retained only as historical context.
+
 # DeepSeek Harness — macOS Intel
 
 [简体中文](README.zh-CN.md) | [English](README.md) | [平台差异 / Platform details](docs/PLATFORM.md)
